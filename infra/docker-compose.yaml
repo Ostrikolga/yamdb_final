@@ -6,16 +6,13 @@ volumes:
   database:
 
 services:
-
-  # db
   db:
     image: postgres:13.0-alpine
     volumes:
-      - database:/var/lib/postgresql/data/
+      - /var/lib/postgresql/data/
     env_file:
-      - ./.env.example
+      - ./.env
 
-  # web
   web:
     image: ostrikolga/api_yamdb:latest
     restart: always
@@ -27,9 +24,8 @@ services:
     depends_on:
       - db
     env_file:
-      - ./.env.example
+      - ./.env
 
-  # nginx
   nginx:
     image: nginx:1.21.3-alpine
     ports:

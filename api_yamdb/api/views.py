@@ -1,3 +1,12 @@
+from api.filters import TitlesFilter
+from api.mixins import ListCreateDestroyViewSet
+from api.permissions import (IsAdmin, IsAdminOrReadOnly,
+                             IsAuthorOrModeratorOrAdminOrReadOnly)
+from api.serializers import (CategorySerializer, CommentSerializer,
+                             GenreSerializer, NotAdminSerializer,
+                             ReviewSerializer, SignUpSerializer,
+                             TitleCreateSerializer, TitleReadSerializer,
+                             TokenSerializer, UsersSerializer)
 from django.contrib.auth.tokens import default_token_generator
 from django.core.mail import EmailMessage
 from django.db.models import Avg
@@ -12,16 +21,6 @@ from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import RefreshToken
 from reviews.models import Category, Genre, Review, Title
 from users.models import User
-
-from .filters import TitlesFilter
-from .mixins import CreateListDestroyViewSet
-from .permissions import (IsAdmin, IsAdminOrReadOnly,
-                          IsAuthorOrModeratorOrAdminOrReadOnly)
-from .serializers import (CategorySerializer, CommentSerializer,
-                          GenreSerializer, NotAdminSerializer,
-                          ReviewSerializer, SignUpSerializer,
-                          TitleCreateSerializer, TitleReadSerializer,
-                          TokenSerializer, UsersSerializer)
 
 
 class SignUp(APIView):
@@ -66,7 +65,7 @@ def token(request):
     )
 
 
-class CategoryViewSet(CreateListDestroyViewSet):
+class CategoryViewSet(ListCreateDestroyViewSet):
     """Вьюсет для категорий."""
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
@@ -76,7 +75,7 @@ class CategoryViewSet(CreateListDestroyViewSet):
     lookup_field = 'slug'
 
 
-class GenreViewSet(CreateListDestroyViewSet):
+class GenreViewSet(ListCreateDestroyViewSet):
     """Вьюсет для жанров."""
     queryset = Genre.objects.all()
     serializer_class = GenreSerializer
