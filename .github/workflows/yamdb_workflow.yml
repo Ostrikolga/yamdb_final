@@ -60,9 +60,7 @@ jobs:
           passphrase: ${{ secrets.PASSPHRASE }}
           
           script: |
-            sudo systemctl stop nginx
             sudo docker pull ostrikolga/api_yamdb:latest
-            sudo docker stop $(sudo docker ps -a -q)
             sudo docker-compose stop
             sudo docker-compose rm web
             touch .env
