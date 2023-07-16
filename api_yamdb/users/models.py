@@ -2,7 +2,6 @@ from api.validators import UsernameValidator, validate_username
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
-
 USER = 'user'
 MODERATOR = 'moderator'
 ADMIN = 'admin'
