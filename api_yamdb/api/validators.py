@@ -1,6 +1,7 @@
+from datetime import datetime
+
 from django.contrib.auth.validators import UnicodeUsernameValidator
 from rest_framework.exceptions import ValidationError
-from datetime import datetime
 
 
 def validate_username(value):

@@ -1,9 +1,6 @@
 from django.db import models
 
-from api.validators import (
-    score_validator,
-    validate_year
-)
+from api.validators import score_validator, validate_year
 from users.models import User
 
 
