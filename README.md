@@ -2,7 +2,7 @@
 yamdb_final
 <h1>Проект YaMDb собирает отзывы пользователей на различные произведения.<h1>
 
-![yamdb_final status](https://github.com/ostrikolga/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg?event=push)
+![yamdb_final status](https://github.com/ostrikolga/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
 ---
 
@@ -86,7 +86,7 @@ docker-compose down -v
 Каждый ресурс описан в документации: указаны эндпойнты (адреса, по которым можно сделать запрос), разрешённые типы запросов, права доступа и дополнительные параметры, если это необходимо.
 
 ### Развернутый проект:
-http://158.160.77.70/
+http://158.160.77.38/
 
 <h3>Автор:<h3>
 [Острикова Ольга ](https://github.com/ostrikolga)
